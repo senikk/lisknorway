@@ -1,5 +1,15 @@
 [
 	{
+    		"path": "/messages/add",
+    		"method": "put",
+    		"handler": "contracts.Message.add"
+	},
+	{
+    		"path": "/messages/list",
+    		"method": "get",
+    		"handler" : "contracts.Message.list"
+	},
+	{
 		"path": "/",
 		"method": "get",
 		"handler": "system.api.helloworld"
