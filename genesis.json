@@ -1,0 +1,32 @@
+{
+    "delegate": "32e8bb9b79ee9f642d29000005f55391074f091a62b127c05710a7cbae3b559d",
+    "height": 1,
+    "pointId": "5619462134543996902",
+    "pointHeight": 1,
+    "transactions": [
+        {
+            "type": 4,
+            "amount": 0,
+            "fee": 0,
+            "timestamp": 0,
+            "recipientId": null,
+            "senderId": "15528395550272552397L",
+            "senderPublicKey": "32e8bb9b79ee9f642d29000005f55391074f091a62b127c05710a7cbae3b559d",
+            "asset": {
+                "delegates": {
+                    "list": [
+                        "+32e8bb9b79ee9f642d29000005f55391074f091a62b127c05710a7cbae3b559d"
+                    ]
+                }
+            },
+            "signature": "346bb7b306e56bfe89a10f2dc0c0b3caaf1669de12b3fe7bb29dcf2740a8ba8984d12a0d5b0e0359ea05118dfd63bb3301502c0ccc80b56e2931a6a567e71402",
+            "id": "4788497112740799567"
+        }
+    ],
+    "timestamp": 0,
+    "count": 1,
+    "payloadLength": 182,
+    "payloadHash": "4f24e6e4c02874423d16d4b6c02912700af8c9ddc74ef8c591675fb18d9a2bfe",
+    "signature": "d7de4619921a6e67753939d81f222266339dcb501d3cfaacc495da5913f1102a3561942fb063553860d41306ad10dcc96e087e6dfe8db9247f56f72f1e61db00",
+    "id": "6838343039572217702"
+}
