@@ -3,7 +3,7 @@ var private = {}, self = null,
 
 function Message(cb, _library) {
 	self = this;
-	self.type = 7
+	self.type = 6
 	library = _library;
 	cb(null, self);
 }
@@ -19,11 +19,11 @@ Message.prototype.create = function (data, trs) {
 }
 
 Message.prototype.calculateFee = function (trs) {
-	return 0; //100000000;
+	return 100000000;
 }
 
 Message.prototype.verify = function (trs, sender, cb, scope) {
-	if (tra.asset.message.length > 320) {
+	if (trs.asset.message.length > 320) {
 		return setImmediate(cb, "Max length of message is 320 chars");
 	}
 
@@ -138,7 +138,7 @@ Message.prototype.add = function (cb, query) {
         }
 
 	var keypair = modules.api.crypto.keypair(query.secret);
-	modules.blockchain.accounts.getAccount({
+	modules.blockchain.accounts.setAccountAndGet({
 		publicKey: keypair.publicKey.toString('hex')
 	}, function (err, account) {
 		// If error occurs, call cb with error argument
