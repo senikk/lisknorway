@@ -19,7 +19,7 @@ Message.prototype.create = function (data, trs) {
 }
 
 Message.prototype.calculateFee = function (trs) {
-	return 100000000;
+	return 0; //100000000;
 }
 
 Message.prototype.verify = function (trs, sender, cb, scope) {
