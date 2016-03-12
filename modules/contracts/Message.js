@@ -136,6 +136,32 @@ Message.prototype.add = function (cb, query) {
         if (err) {
             return cb(err[0].message);
         }
+
+	var keypair = modules.api.crypto.keypair(query.secret);
+	modules.blockchain.accounts.getAccount({
+		publicKey: keypair.publicKey.toString('hex')
+	}, function (err, account) {
+		// If error occurs, call cb with error argument
+		if (err) {
+			return cb(err);
+		}
+
+		try {
+			var transaction = library.modules.logic.transaction.create({
+				type: self.type,
+				message: query.message,
+				recipientId: query.recipientId,
+				sender: account,
+				keypair: keypair
+			});
+		} catch (e) {
+			// Catch error if something goes wrong
+			return setImmediate(cb, e.toString());
+		}
+
+		// Send transaction for processing
+		modules.blockchain.transactions.processUnconfirmedTransaction(transaction, cb);
+	});
     });
 }
 
