@@ -60,7 +60,7 @@ Api.prototype.onBlockchainLoaded = function () {
 
 Api.prototype.helloworld = function (cb) {
 	cb(null, {
-		test: "Hello SENIKK! :)"
+		test: "Hello SENIKK :)"
 	});
 }
 

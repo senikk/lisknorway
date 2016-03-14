@@ -1,13 +1,13 @@
 [
 	{
-    		"path": "/messages/add",
-    		"method": "put",
-    		"handler": "contracts.Message.add"
+    	"path": "/messages/add",
+    	"method": "put",
+    	"handler": "contracts.Message.add"
 	},
 	{
-    		"path": "/messages/list",
-    		"method": "get",
-    		"handler" : "contracts.Message.list"
+    	"path": "/messages/list",
+    	"method": "get",
+    	"handler" : "contracts.Message.list"
 	},
 	{
 		"path": "/",

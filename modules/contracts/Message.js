@@ -10,7 +10,6 @@ function Message(cb, _library) {
 
 Message.prototype.create = function (data, trs) {
 	trs.recipientId = data.recipientId;
-
 	trs.asset = {
 		message: new Buffer(data.message, 'utf8').toString('hex')
 	};
@@ -195,8 +194,11 @@ Message.prototype.list = function (cb, query) {
                 table: 'asset_messages',
                 alias: "tm",
                 on: {"t.id": "tm.transactionId"}
-            }]
-        }, ['id', 'type', 'senderId', 'senderPublicKey', 'recipientId', 'amount', 'fee', 'signature', 'blockId', 'transactionId', 'message'], function (err, transactions) {
+            }],
+            sort: {
+                timestamp: -1
+            }
+        }, ['id', 'type', 'senderId', 'senderPublicKey', 'recipientId', 'amount', 'fee', 'timestamp', 'signature', 'blockId', 'token', 'message', 'transactionId'], function (err, transactions) {
             if (err) {
                 return cb(err.toString());
             }
